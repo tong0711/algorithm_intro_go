@@ -108,3 +108,30 @@ func merge(a []int, begin int, middle int, end int) {
 	}
 
 }
+
+func Quick_Sort(a []int, begin int, end int) {
+	if begin < end {
+		mid := partition(a, begin, end)
+		fmt.Println("----mid is:", mid)
+		fmt.Println("-------mid a:", a)
+		Quick_Sort(a, begin, mid-1)
+		Quick_Sort(a, mid, end)
+	}
+}
+func partition(a []int, begin int, end int) int {
+	x := a[end]
+	i := begin - 1
+	for k := begin; k < end; k++ {
+		if a[k] <= x {
+			i = i + 1
+			temp := a[i]
+			a[i] = a[k]
+			a[k] = temp
+
+		}
+	}
+	tmp := a[i+1]
+	a[i+1] = a[end]
+	a[end] = tmp
+	return i + 1
+}

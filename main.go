@@ -145,5 +145,9 @@ func main() {
 
 	fmt.Println(slice1)
 	fmt.Println(" max subarray:", result)
+	var as2 = [12]int{5, 24, -3, 44, 51, -6, 71, -81, 29, -110, 11, 23}
+	slice2 := as2[:]
+	chapter1.Quick_Sort(slice2, 0, len(slice2)-1)
+	fmt.Print(" slice quick sort:", slice2)
 
 }
